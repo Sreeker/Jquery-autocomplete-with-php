@@ -1,0 +1,52 @@
+<!Doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<title>Autocomplete with JS and Php</title>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+  	
+</head>
+<body>
+	<div class="container">
+		<br><br>
+		<h3>Customer Details</h3>
+		<br>
+		<div class="row">
+			<form class="form-inline" method="post" id="register_form">
+	            <div class="form-group">
+					<label for="name"  class="head">Name&nbsp;</label>
+					<input class="form-control" name="customername"  type="text" id="customername"  />
+				</div>
+				&nbsp;
+				<div class="form-group ">
+					<label for="mobilenumber"  class="head">Address&nbsp;</label>
+					<input class="form-control" name="address"  type="text" id="address"  />
+				</div>
+				&nbsp;
+				<div class="form-group">
+					<label for="email"  class="head">City&nbsp;</label>
+					<input class="form-control" name="city"  type="type" id="city" required />
+				</div>
+			</form>
+		</div>
+	</div>
+<script>
+
+	$('#customername').autocomplete({
+		source:'ajax_autocomplete.php?action=name',
+	});
+	$('#address').autocomplete({
+		source:'ajax_autocomplete.php?action=address',
+	});
+	$('#city').autocomplete({
+		source:'ajax_autocomplete.php?action=city',
+	});
+
+
+</script>
+</body>
+</html>
